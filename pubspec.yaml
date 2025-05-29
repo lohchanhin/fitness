@@ -13,6 +13,7 @@ dependencies:
   firebase_auth: ^4.6.2
   cloud_firestore: ^4.8.2
 
+
 flutter:
   uses-material-design: true
   assets:

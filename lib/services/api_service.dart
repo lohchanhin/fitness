@@ -1,3 +1,4 @@
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../models/meal.dart';
@@ -25,5 +26,6 @@ class ApiService {
       'description': meal.description,
       'calories': meal.calories,
     });
+
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../models/meal.dart';
 import '../../services/api_service.dart';
 
@@ -92,6 +91,7 @@ class _DietTrackerScreenState extends State<DietTrackerScreen> {
         onPressed: _addMeal,
         child: const Icon(Icons.add),
       ),
+
     );
   }
 }
