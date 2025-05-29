@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'screens/student/student_home.dart';
+import 'screens/login_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,11 +19,11 @@ class FitnessApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
     return MaterialApp(
       title: 'Fitness Insight',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const StudentHomeScreen(),
-
+      home: user != null ? const StudentHomeScreen() : const LoginScreen(),
     );
   }
 }
