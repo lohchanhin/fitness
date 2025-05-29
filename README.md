@@ -66,7 +66,8 @@ lib
 ├── screens
 │   ├── student
 │   │   ├── diet_tracker.dart
-│   │   └── workout_plan.dart
+│   │   ├── workout_plan.dart
+│   │   └── student_home.dart
 │   ├── trainer
 │   │   ├── manage_students.dart
 │   │   └── create_workout.dart

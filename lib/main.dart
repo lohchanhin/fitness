@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+
+import 'screens/student/student_home.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const FitnessApp());
 }
 
@@ -12,7 +19,8 @@ class FitnessApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fitness Insight',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const Placeholder(),
+      home: const StudentHomeScreen(),
+
     );
   }
 }
