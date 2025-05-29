@@ -1,0 +1,12 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+pubspec.lock
+build/
+
+# Visual Studio Code
+.vscode/
+
+# Others
+ios/
+android/
