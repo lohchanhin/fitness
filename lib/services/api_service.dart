@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../models/meal.dart';
@@ -26,6 +25,20 @@ class ApiService {
       'description': meal.description,
       'calories': meal.calories,
     });
+  }
 
+  Future<Meal?> fetchMeal(String userId, String mealId) async {
+    final doc = await _db
+        .collection('users')
+        .doc(userId)
+        .collection('meals')
+        .doc(mealId)
+        .get();
+    if (!doc.exists) return null;
+    return Meal(
+      id: doc.id,
+      description: doc['description'] as String,
+      calories: doc['calories'] as int,
+    );
   }
 }
