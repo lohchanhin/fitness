@@ -74,6 +74,14 @@ firebase login
 firebase init
 ```
 
+接著，使用 FlutterFire CLI 產生各平台所需的設定檔：
+
+```bash
+flutterfire configure
+```
+
+此指令會在 `lib/firebase_options.dart` 以及 Android/iOS 專案內產生對應的設定，確保 `Firebase.initializeApp` 能正確載入。
+
 在初始化過程中，可選擇需要的服務（如 Firestore、Authentication 等），並選取既有專案或建立新的 Firebase 專案。
 
 ### 6. 設定 Firebase 專案目標
