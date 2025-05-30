@@ -1,13 +1,23 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 class AuthService {
-  /// 模擬登入，依照 email 判斷角色並回傳 'student' 或 'trainer'。
-  Future<String?> signIn(String email, String password) async {
-    // TODO: implement authentication logic
-    await Future.delayed(const Duration(milliseconds: 300));
-    if (email.contains('trainer')) {
-      return 'trainer';
-    } else if (email.contains('student')) {
-      return 'student';
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future<bool> signIn(String email, String password) async {
+    try {
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
+      return true;
+    } on FirebaseAuthException {
+      return false;
     }
-    return null;
+  }
+
+  Future<bool> signUp(String email, String password) async {
+    try {
+      await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      return true;
+    } on FirebaseAuthException {
+      return false;
+    }
   }
 }
