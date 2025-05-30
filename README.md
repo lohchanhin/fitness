@@ -69,7 +69,8 @@ lib
 │   │   └── workout_plan.dart
 │   ├── trainer
 │   │   ├── manage_students.dart
-│   │   └── create_workout.dart
+│   │   ├── create_workout.dart
+│   │   └── trainer_home.dart
 ├── models
 │   ├── user.dart
 │   ├── meal.dart
